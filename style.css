@@ -1,0 +1,570 @@
+/* --- Global Settings --- */
+:root {
+    --primary-color: #ffb703;
+    /* Yellowish Gold */
+    --bg-dark: #121212;
+    --card-bg: #1e1e1e;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+/* --- Main Layout --- */
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+.device-bezel {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 5%;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-gray);
+    transition: 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn {
+    background: transparent;
+    border: 1.5px solid var(--primary-color);
+    color: var(--text-white);
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    /* Desktop par left align */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Image ko right side par dhakelnay ke liye */
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.order-btn-main {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #000;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(255, 183, 3, 0.3);
+}
+
+/* --- Hero Image & Floating Cards --- */
+.hero-image {
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-dish {
+    width: 100%;
+    max-width: 600px;
+    /* Desktop size */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Floating Card 1: Combo */
+.combo-card {
+    position: absolute;
+    bottom: 10%;
+    right: -20px;
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.combo-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Floating Card 2: Chef/Contact */
+.contact-card {
+    position: absolute;
+    top: 20%;
+    left: -30px;
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.call-icon {
+    background: var(--primary-color);
+    color: #000;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* --- Customer Reviews --- */
+.customers-section {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.customer-imgs img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid var(--bg-dark);
+    margin-left: -15px;
+}
+
+.customer-imgs img:first-child {
+    margin-left: 0;
+}
+
+.rating {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: var(--primary-color);
+    margin-left: 5px;
+}
+
+/* --- WhatsApp Sticky --- */
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .device-bezel {
+        padding: 15px 20px;
+    }
+
+    /* Header adjustments */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav,
+    .header-icons i:not(.fa-shopping-cart) {
+        display: none;
+        /* Mobile pe menu aur extra icons hide kar diye */
+    }
+
+    /* Hero Section Vertical Alignment */
+    .hero {
+        flex-direction: column;
+        /* Content upar, image niche */
+        text-align: center;
+        gap: 40px;
+        padding-top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        /* Mobile ke liye font thoda chota */
+        margin-top: 10px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Customer Reviews Center Alignment */
+    .customers-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .customer-imgs {
+        justify-content: center;
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    /* Floating Cards Adjustment for Mobile */
+    /* Mobile par inko absolute ki bajaye relative ya scaled rakha hai taake screen se bahar na jayen */
+
+    .contact-card {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        transform: scale(0.85);
+        /* Mobile pe thoda chota */
+        z-index: 2;
+    }
+
+    .combo-card {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: scale(0.85);
+        z-index: 2;
+    }
+
+    .main-dish {
+        max-width: 90%;
+        /* Mobile screen ke mutabiq */
+        margin: 20px auto;
+    }
+
+    /* WhatsApp Sticky for Mobile */
+    .whatsapp-sticky {
+        bottom: 20px;
+        right: 20px;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+/* Chote Mobile Screens (e.g. iPhone SE) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-card,
+    .combo-card {
+        transform: scale(0.75);
+        /* Mazeed chota taake fit aye */
+    }
+}
+/* --- Desktop Styles (As it is) --- */
+
+/* --- Mobile Specific Optimization (768px and below) --- */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 70px;
+        /* Space for bottom nav */
+    }
+
+    .device-bezel {
+        padding: 10px 15px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    /* Hide desktop nav */
+    nav,
+    .header-icons i:not(.fa-shopping-cart) {
+        display: none;
+    }
+
+    /* Hero Section: Stack elements vertically */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    /* Hero Image Container */
+    .hero-image {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+    }
+
+    .main-dish {
+        width: 85%;
+        /* Scaled for mobile */
+        max-width: 350px;
+    }
+
+    /* Floating Cards: Perfect Positioning for Mobile */
+    .contact-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0.8);
+        /* Shrink for smaller screens */
+        background: rgba(30, 30, 30, 0.95);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 5;
+    }
+
+    .combo-card {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        transform: scale(0.8);
+        background: rgba(30, 30, 30, 0.95);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 5;
+    }
+
+    /* Customer Section Alignment */
+    .customers-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .customer-imgs {
+        margin-bottom: 10px;
+    }
+
+    /* WhatsApp Sticky Adjustment */
+    .whatsapp-sticky {
+        bottom: 85px;
+        /* Above bottom nav */
+        right: 15px;
+        font-size: 13px;
+    }
+
+    /* --- Bottom Navigation Bar Styles --- */
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background: #1a1a1a;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        padding: 0 10px;
+    }
+
+    .nav-item {
+        text-decoration: none;
+        color: #888;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px;
+        transition: 0.3s;
+    }
+
+    .nav-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .nav-item.active {
+        color: var(--primary-color);
+    }
+}
+
+/* For Very Small Screens (iPhone SE etc.) */
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-dish {
+        width: 95%;
+    }
+
+    .contact-card,
+    .combo-card {
+        transform: scale(0.7);
+    }
+}
+/* 1. Sab se pehle Bottom Nav ko default (Laptop/Desktop) par hide karein */
+.mobile-nav {
+    display: none;
+}
+
+/* 2. Ab Media Query ke andar isko show karein */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 70px;
+        /* Mobile par space banayein */
+    }
+
+    .mobile-nav {
+        display: flex;
+        /* Sirf mobile (768px se niche) par nazar aayega */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background: #1a1a1a;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        padding: 0 10px;
+    }
+
+    .nav-item {
+        text-decoration: none;
+        color: #888;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px;
+    }
+
+    .nav-item i {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .nav-item.active {
+        color: var(--primary-color);
+    }
+}
